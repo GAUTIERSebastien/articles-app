@@ -8,7 +8,7 @@ CREATE TABLE article (
   PRIMARY KEY (id)
 );
 
-INSERT INTO article (libelle, prix) VALUES ('Vélo', 500.00);
+INSERT INTO article (libelle, prix) VALUES ('VTT', 500.00);
 INSERT INTO article (libelle, prix) VALUES ('Moto', 4200.00);
 INSERT INTO article (libelle, prix) VALUES ('Kayak', 299.89);
 INSERT INTO article (libelle, prix) VALUES ('Skate', 600.49);
