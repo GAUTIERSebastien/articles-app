@@ -8,7 +8,7 @@
 docker-compose up --build
 ```
 
-## Etape 3 => choisir sa requête
+## Etape 3 => Choisir sa requête
 
 ```javascript
 
