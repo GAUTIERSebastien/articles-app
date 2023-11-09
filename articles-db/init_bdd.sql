@@ -1,13 +1,14 @@
-create table article (
-  id int not null auto_increment,
-  libelle VARCHAR(100) not null,
-  prix DECIMAL,
-  primary key (id)
+CREATE DATABASE IF NOT EXISTS `articles-db`;
+USE `articles-db`;
+
+CREATE TABLE article (
+  id INT NOT NULL AUTO_INCREMENT,
+  libelle VARCHAR(100) NOT NULL,
+  prix DECIMAL(10,2),
+  PRIMARY KEY (id)
 );
 
-insert into article(libelle, prix) values ('Vélo', 500.00);
-insert into article(libelle, prix) values ('Moto', 4200.00);
-insert into article(libelle, prix) values ('Kayak', 299.89);
-insert into article(libelle, prix) values ('Skate', 600.49);
-
-
+INSERT INTO article (libelle, prix) VALUES ('Vélo', 500.00);
+INSERT INTO article (libelle, prix) VALUES ('Moto', 4200.00);
+INSERT INTO article (libelle, prix) VALUES ('Kayak', 299.89);
+INSERT INTO article (libelle, prix) VALUES ('Skate', 600.49);

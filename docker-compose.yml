@@ -3,7 +3,6 @@ version: "3.8"
 services:
   articles-bdd:
     build: ./articles-db
-    image: articles-db
     container_name: articles-db
     ports:
       - "9000:3306"
@@ -11,9 +10,31 @@ services:
       - v-network
     volumes:
       - v-bdd-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 20s
+      retries: 10
+
+  articles-back:
+    build: ./articles-back
+    container_name: articles-back
+    ports:
+      - "9002:9001"
+    networks:
+      - v-network
+    depends_on:
+      articles-bdd:
+        condition: service_healthy
+    environment:
+      - DB_HOST=articles-db
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=article-db
 
 networks:
   v-network: {}
 
 volumes:
-  v-bdd-data: {}
+  v-bdd-data:

@@ -18,10 +18,6 @@ docker run -p <port_machine>:<port_conteneur>
 docker run -p 9000:8080 tomcat:8.5.43
 ```
 
-```bash
-
-```
-
 ## TP
 
 ### Test création et démarage db ok
