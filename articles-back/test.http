@@ -1,0 +1,11 @@
+### Get all articles
+GET http://localhost:9001/articles
+
+### Create a new article
+POST http://localhost:9001/articles
+Content-Type: application/json
+
+{
+    "libelle": "Article de test",
+    "prix": 12.34
+}
