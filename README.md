@@ -1,43 +1,28 @@
-# Aide
+# Aide à l'installation
 
-## Récupérer une image sur https://hub.docker.com/
+## Etape 1 => Cloner le repository
 
-```bash
-docker pull tomcat:8
-```
-
-## Démarrer un container
-
-```bash
-docker run -p <port_machine>:<port_conteneur>
-```
-
-### Exemple: une verrsion spécifique est paramétré => 8.5.43
-
-```bash
-docker run -p 9000:8080 tomcat:8.5.43
-```
-
-## TP
-
-### Test création et démarage db ok
-
-```bash
-docker build --tag articles-bd .
-```
-
-```bash
-docker run -p 9000:3306 -d articles-bd
-```
-
-### Lancer Docker Compose ok
+## Etape 2 => Lancer Docker Compose
 
 ```bash
 docker-compose up --build
 ```
 
-### Inspection de => articles-app ok
+## Etape 3 => choisir sa requête
 
-```bash
-docker inspect articles-app_v-bdd-data
+```javascript
+
+### Get all articles
+GET http://localhost:9002/articles
+
+
+### Create a new article
+POST http://localhost:9002/articles
+Content-Type: application/json
+
+{
+    "libelle": "Article de test",
+    "prix": 12.34
+}
+
 ```
